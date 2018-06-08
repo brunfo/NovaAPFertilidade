@@ -43,6 +43,15 @@ public class APFertilidade {
     }
 
     /**
+     * Remove um parceiro da lista de Parceiros
+     *
+     * @param parceiro Parceiro a ser removido
+     */
+    void removerParceiro(Parceiro parceiro) {
+        parceiros.remove(parceiro);
+    }
+
+    /**
      * Lista de Parceiros filtrada ou não
      * @return Lista de Parceiros
      */
@@ -79,7 +88,27 @@ public class APFertilidade {
     /**
      * Remove todos os filtros aplicados à lista de Parceiros
      */
-    void removerFiltro(){ parceirosFiltrados.clear();}
+    void removerFiltro(){ parceirosFiltrados.clear();
+    }
 
 
+    /**
+     * Adiciona um benefício a um parceiro
+     *
+     * @param parceiro  O Parceiro
+     * @param beneficio O Benefício
+     */
+    void criarBeneficio(Parceiro parceiro, Beneficio beneficio) {
+        parceiro.getBeneficios().add(beneficio);
+    }
+
+    /**
+     * Removo um benefício de um parceiro
+     *
+     * @param parceiro  O Parceiro
+     * @param beneficio O Benefício
+     */
+    void removerBeneficio(Parceiro parceiro, Beneficio beneficio) {
+        parceiro.getBeneficios().remove(beneficio);
+    }
 }

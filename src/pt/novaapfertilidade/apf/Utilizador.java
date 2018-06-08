@@ -26,8 +26,21 @@ public class Utilizador {
         return -1;
     }
 
-    public static void preencherDadosParceiro(Parceiro parceiro){
+    public static void criarParceiro(Parceiro parceiro) {
         aPFertilidade.criarParceiro(parceiro);
+    }
+
+    public static void removerParceiro(Parceiro parceiro) {
+        aPFertilidade.removerParceiro(parceiro);
+    }
+
+
+    public static void criarBeneficio(Parceiro parceiro, Beneficio beneficio) {
+        aPFertilidade.criarBeneficio(parceiro, beneficio);
+    }
+
+    public static void removerBeneficio(Parceiro parceiro, Beneficio beneficio) {
+        aPFertilidade.removerBeneficio(parceiro, beneficio);
     }
 
     public static void listarParceiros(){janela.listarParceiros();}

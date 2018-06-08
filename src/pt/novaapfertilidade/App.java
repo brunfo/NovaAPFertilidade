@@ -23,11 +23,11 @@ public class App {
     }
 
     private static void simular(){
-        Utilizador.preencherDadosParceiro(new Parceiro(1, "Farmácia Silva", "Farmácia"));
-        Utilizador.preencherDadosParceiro(new Parceiro(2, "Farmácia Calado", "Farmácia"));
-        Utilizador.preencherDadosParceiro(new Parceiro(3, "Farmácia Mateus", "Farmácia"));
-        Utilizador.preencherDadosParceiro(new Parceiro(4, "Farmácia da Republica", "Farmácia"));
-        Utilizador.preencherDadosParceiro(new Parceiro(5, "Hotel Inn", "Hotéis"));
+        Utilizador.criarParceiro(new Parceiro(1, "Farmácia Silva", "Farmácia"));
+        Utilizador.criarParceiro(new Parceiro(2, "Farmácia Calado", "Farmácia"));
+        Utilizador.criarParceiro(new Parceiro(3, "Farmácia Mateus", "Farmácia"));
+        Utilizador.criarParceiro(new Parceiro(4, "Farmácia da Republica", "Farmácia"));
+        Utilizador.criarParceiro(new Parceiro(5, "Hotel Inn", "Hotéis"));
 
         Utilizador.verMenu();
 
