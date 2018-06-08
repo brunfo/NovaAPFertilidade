@@ -23,24 +23,24 @@ public class App {
     }
 
     private static void simular(){
-        Utilizador.criarParceiro(new Parceiro(1, "Farmácia Silva", "Farmácia"));
-        Utilizador.criarParceiro(new Parceiro(2, "Farmácia Calado", "Farmácia"));
-        Utilizador.criarParceiro(new Parceiro(3, "Farmácia Mateus", "Farmácia"));
-        Utilizador.criarParceiro(new Parceiro(4, "Farmácia da Republica", "Farmácia"));
-        Utilizador.criarParceiro(new Parceiro(5, "Hotel Inn", "Hotéis"));
+        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 1, "Farmácia Silva"));
+        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 2, "Farmácia Calado"));
+        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 3, "Farmácia Mateus"));
+        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 4, "Farmácia da Republica"));
+        Utilizador.adicionaParceiro(new Parceiro("Hotéis", 5, "Hotel Inn"));
 
         Utilizador.verMenu();
 
-        Utilizador.listarParceiros();
-        Utilizador.aplicarFiltro("ID", "2");
-        Utilizador.listarParceiros();
-        Utilizador.removerFiltro();
-        Utilizador.listarParceiros();
-        Utilizador.aplicarFiltro("tipo", "farmácia");
-        Utilizador.listarParceiros();
+        Utilizador.listaParceiros();
+        Utilizador.aplicaFiltro("ID", "2");
+        Utilizador.listaParceiros();
+        Utilizador.removeFiltro();
+        Utilizador.listaParceiros();
+        Utilizador.aplicaFiltro("tipo", "farmácia");
+        Utilizador.listaParceiros();
         //aplica filtro sobre lista filtrada
-        Utilizador.aplicarFiltro("ID", "3");
-        Utilizador.listarParceiros();
+        Utilizador.aplicaFiltro("ID", "3");
+        Utilizador.listaParceiros();
 
 
         /*
@@ -49,7 +49,7 @@ public class App {
             utilizador.verMenu();
             sair=utilizador.digitarOpcao();
             switch(sair){
-                case 1: utilizador.listarParceiros();
+                case 1: utilizador.listaParceiros();
                 break;
             }
         }while(sair!=9);

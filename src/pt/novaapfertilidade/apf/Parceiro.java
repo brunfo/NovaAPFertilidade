@@ -20,20 +20,59 @@ public class Parceiro {
     private List<Beneficio> beneficios = new ArrayList<>();
 
 
-    public Parceiro(int idParceiro, String nome, String tipoParceiro) {
-        this.idParceiro = idParceiro;
-        this.nome = nome;
-        this.tipoParceiro = tipoParceiro;
+    public Parceiro(String tipoParceiro, int idParceiro, String nome) {
+        this(tipoParceiro,
+                idParceiro,
+                nome,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
     }
 
-    public String toString(){
+    public Parceiro(String tipoParceiro,
+                    int idParceiro,
+                    String nome,
+                    String morada,
+                    String codigoPostal,
+                    String localidade,
+                    String concelho,
+                    String distrito,
+                    String telefone,
+                    String fax,
+                    String email,
+                    String webSite,
+                    List<Beneficio> beneficios) {
+
+        this.tipoParceiro = tipoParceiro;
+        this.idParceiro = idParceiro;
+        this.nome = nome;
+        this.morada = morada;
+        this.codigoPostal = codigoPostal;
+        this.localidade = localidade;
+        this.concelho = concelho;
+        this.distrito = distrito;
+        this.telefone = telefone;
+        this.fax = fax;
+        this.email = email;
+        this.webSite = webSite;
+        this.beneficios = beneficios;
+    }
+
+    public String toString() {
         return tipoParceiro + " => " + idParceiro + " : " + nome;
     }
 
 
-     int getIdParceiro() {
+    int getIdParceiro() {
         return idParceiro;
-     }
+    }
 
     String getTipoParceiro() {
         return tipoParceiro;
