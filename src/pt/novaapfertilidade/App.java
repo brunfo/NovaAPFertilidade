@@ -25,7 +25,7 @@ public class App {
     private static void simular(){
         Utilizador.adicionaParceiro(new Parceiro("Farmácia", 1, "Farmácia Silva"));
         Utilizador.adicionaParceiro(new Parceiro("Farmácia", 2, "Farmácia Calado"));
-        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 3, "Farmácia Mateus"));
+        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 2, "Farmácia Mateus"));
         Utilizador.adicionaParceiro(new Parceiro("Farmácia", 4, "Farmácia da Republica"));
         Utilizador.adicionaParceiro(new Parceiro("Hotéis", 5, "Hotel Inn"));
 

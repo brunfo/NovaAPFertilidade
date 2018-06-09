@@ -39,17 +39,49 @@ public class APFertilidade {
      * @param novoParceiro - Parceiro a introduzir na lista
      */
     void criaParceiro(Parceiro novoParceiro) {
-        //TODO verificar dados duplicados
-        parceiros.add(novoParceiro);
+        int index = verificaDuplicado(novoParceiro);
+        if (index == -1)
+            parceiros.add(novoParceiro);
+        else if (substituiParceiro(index))
+            editaParceiro(index, novoParceiro);
     }
 
     /**
-     * Edita um Parceiro, substituindo o parceiro por uma clone com novos dados
+     * Verifica se na lista de Parceiros já existe o novo Parceiro
      *
-     * @param parceiro Parceiro
+     * @param novoParceiro Novo Parceiro
+     * @return Index do duplicado, ou -1 se não existir
      */
-    void editaParceiro(Parceiro parceiro, Parceiro cloneParceiro) {
-        parceiros.set(parceiros.indexOf(parceiro), cloneParceiro);
+    private int verificaDuplicado(Parceiro novoParceiro) {
+        for (Parceiro parceiro : parceiros)
+            if (parceiro.getIdParceiro() == novoParceiro.getIdParceiro() ||
+                    parceiro.getNome().equals(novoParceiro.getNome()) &&
+                            parceiro.getMorada().equals(novoParceiro.getMorada()))
+                return parceiros.indexOf(parceiro);
+        return -1;
+    }
+
+    /**
+     * Edita um Parceiro, substituindo-o por um novo Parceiro com novos dados
+     *
+     * @param index index do Parceiro a ser substituido.
+     * @param novoParceiro Novo parceiro a ser inserido
+     */
+    void editaParceiro(int index, Parceiro novoParceiro) {
+        parceiros.set(index, novoParceiro);
+    }
+
+    /**
+     * Enviar mensagem de alerta que existem um duplicado, perguntado se quer substituir e recebe resposta de utilizador.
+     *
+     * @param index index do elemento duplicado
+     * @return false para não substituir, trua para substituir
+     */
+    boolean substituiParceiro(int index) {
+        //TODO enviar mensagem de alerta para janela que existem um duplicado, perguntando se quer substituir
+        //TODO receber resposta de utilizador se quer substituir
+        System.out.println("\n\nALERTA - Duplicado encontrado, processo de susbtituição em desenvolvimento\n\n");
+        return false;
     }
 
     /**

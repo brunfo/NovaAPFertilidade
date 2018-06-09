@@ -42,6 +42,9 @@ public class JanelaPrincipal {
             System.out.println("\n**************************ALERTA**************************\n" +
                                  "A opção selecionada não é válida! Insira uma opção válida!\n" +
                                  "**********************************************************\n");
+        if (ex.toString() instanceof String)
+            System.out.println(ex);
+
     }
 
     /**
