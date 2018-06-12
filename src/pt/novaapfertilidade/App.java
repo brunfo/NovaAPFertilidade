@@ -31,7 +31,7 @@ public class App {
         Utilizador.adicionaParceiro(new Parceiro("Hotéis", 5, "Hotel Inn"));
 
         Utilizador.gravarDados();
-        //Utilizador.lerDados();
+        Utilizador.lerDados();
 
         Utilizador.verMenu();
 

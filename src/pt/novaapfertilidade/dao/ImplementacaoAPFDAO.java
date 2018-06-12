@@ -46,7 +46,7 @@ public class ImplementacaoAPFDAO implements ApfDAO {
             System.err.print(e2.getMessage());
         }
 
-        return null;
+        return parceiros;
     }
 
     @Override
