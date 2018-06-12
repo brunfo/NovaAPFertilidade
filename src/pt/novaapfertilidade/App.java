@@ -3,7 +3,8 @@ package pt.novaapfertilidade;
 import pt.novaapfertilidade.apf.APFertilidade;
 import pt.novaapfertilidade.apf.Parceiro;
 import pt.novaapfertilidade.apf.Utilizador;
-import pt.novaapfertilidade.dao.DAO;
+import pt.novaapfertilidade.dao.ApfDAO;
+import pt.novaapfertilidade.dao.ImplementacaoAPFDAO;
 import pt.novaapfertilidade.gui.JanelaPrincipal;
 
 public class App {
@@ -13,7 +14,7 @@ public class App {
 
     public static void main(String[] args){
         //inicializa a persistence storage
-        DAO armazenamento = new DAO();
+        ApfDAO armazenamento = new ImplementacaoAPFDAO("data/parceiros.json");
         //business object
         aPFertilidade.setStorage (armazenamento);
 
@@ -29,6 +30,9 @@ public class App {
         Utilizador.adicionaParceiro(new Parceiro("Farmácia", 4, "Farmácia da Republica"));
         Utilizador.adicionaParceiro(new Parceiro("Hotéis", 5, "Hotel Inn"));
 
+        Utilizador.gravarDados();
+        //Utilizador.lerDados();
+
         Utilizador.verMenu();
 
         Utilizador.listaParceiros();
@@ -43,16 +47,5 @@ public class App {
         Utilizador.listaParceiros();
 
 
-        /*
-        int sair=0;
-        do {
-            utilizador.verMenu();
-            sair=utilizador.digitarOpcao();
-            switch(sair){
-                case 1: utilizador.listaParceiros();
-                break;
-            }
-        }while(sair!=9);
-        */
     }
 }

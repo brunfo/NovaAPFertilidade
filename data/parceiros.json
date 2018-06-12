@@ -1,0 +1,22 @@
+[
+  {
+    "tipoParceiro": "Farmácia",
+    "idParceiro": 1,
+    "nome": "Farmácia Silva"
+  },
+  {
+    "tipoParceiro": "Farmácia",
+    "idParceiro": 2,
+    "nome": "Farmácia Calado"
+  },
+  {
+    "tipoParceiro": "Farmácia",
+    "idParceiro": 4,
+    "nome": "Farmácia da Republica"
+  },
+  {
+    "tipoParceiro": "Hotéis",
+    "idParceiro": 5,
+    "nome": "Hotel Inn"
+  }
+]

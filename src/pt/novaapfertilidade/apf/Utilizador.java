@@ -34,7 +34,6 @@ public class Utilizador {
         aPFertilidade.removeParceiro(parceiro);
     }
 
-
     public static void adicionaBeneficio(Parceiro parceiro, Beneficio beneficio) {
         aPFertilidade.adicionaBeneficio(parceiro, beneficio);
     }
@@ -53,5 +52,13 @@ public class Utilizador {
 
     public static void removeFiltro() {
         aPFertilidade.removeFiltros();
+    }
+
+    public static void gravarDados() {
+        aPFertilidade.gravarDados();
+    }
+
+    public static void lerDados() {
+        aPFertilidade.lerDados();
     }
 }

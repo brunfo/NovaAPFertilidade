@@ -1,6 +1,6 @@
 package pt.novaapfertilidade.apf;
 
-import pt.novaapfertilidade.dao.DAO;
+import pt.novaapfertilidade.dao.ApfDAO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ public class APFertilidade {
     //singleton
 
     //Objecto de armazenamento
-    private DAO armazenamento;
+    private ApfDAO armazenamento;
 
     private APFertilidade() {
     }
@@ -29,7 +29,7 @@ public class APFertilidade {
      *
      * @param armazenamento - Objecto a ser assignado como armazenamento
      */
-    public void setStorage(DAO armazenamento) {
+    public void setStorage(ApfDAO armazenamento) {
         this.armazenamento = armazenamento;
     }
 
@@ -47,7 +47,8 @@ public class APFertilidade {
     }
 
     /**
-     * Verifica se na lista de Parceiros já existe o novo Parceiro
+     * Verifica se na lista de Parceiros já existe o novo Parceiro.
+     * Pode conter o mesmo nome, desde que morada seja diferente.
      *
      * @param novoParceiro Novo Parceiro
      * @return Index do duplicado, ou -1 se não existir
@@ -55,8 +56,8 @@ public class APFertilidade {
     private int verificaDuplicado(Parceiro novoParceiro) {
         for (Parceiro parceiro : parceiros)
             if (parceiro.getIdParceiro() == novoParceiro.getIdParceiro() ||
-                    parceiro.getNome().equals(novoParceiro.getNome()) &&
-                            parceiro.getMorada().equals(novoParceiro.getMorada()))
+                    (parceiro.getNome().equals(novoParceiro.getNome()) &&
+                            parceiro.getMorada().equals(novoParceiro.getMorada())))
                 return parceiros.indexOf(parceiro);
         return -1;
     }
@@ -67,7 +68,7 @@ public class APFertilidade {
      * @param index index do Parceiro a ser substituido.
      * @param novoParceiro Novo parceiro a ser inserido
      */
-    void editaParceiro(int index, Parceiro novoParceiro) {
+    private void editaParceiro(int index, Parceiro novoParceiro) {
         parceiros.set(index, novoParceiro);
     }
 
@@ -77,7 +78,7 @@ public class APFertilidade {
      * @param index index do elemento duplicado
      * @return false para não substituir, trua para substituir
      */
-    boolean substituiParceiro(int index) {
+    private boolean substituiParceiro(int index) {
         //TODO enviar mensagem de alerta para janela que existem um duplicado, perguntando se quer substituir
         //TODO receber resposta de utilizador se quer substituir
         System.out.println("\n\nALERTA - Duplicado encontrado, processo de susbtituição em desenvolvimento\n\n");
@@ -90,7 +91,7 @@ public class APFertilidade {
      * @param parceiro Parceiro a ser clonado
      * @return Clone do Parceiro
      */
-    Parceiro clonaParceiro(Parceiro parceiro) {
+    private Parceiro clonaParceiro(Parceiro parceiro) {
         List<Beneficio> beneficios = new ArrayList<>();
 
         parceiro.getBeneficios().addAll(beneficios);
@@ -181,5 +182,13 @@ public class APFertilidade {
      */
     void removeBeneficio(Parceiro parceiro, Beneficio beneficio) {
         parceiro.getBeneficios().remove(beneficio);
+    }
+
+    void gravarDados() {
+        armazenamento.setParceiros(getParceiros());
+    }
+
+    void lerDados() {
+        parceiros = armazenamento.getParceiros();
     }
 }
