@@ -65,7 +65,7 @@ public class APFertilidade {
     /**
      * Edita um Parceiro, substituindo-o por um novo Parceiro com novos dados
      *
-     * @param index index do Parceiro a ser substituido.
+     * @param index        index do Parceiro a ser substituido.
      * @param novoParceiro Novo parceiro a ser inserido
      */
     private void editaParceiro(int index, Parceiro novoParceiro) {
@@ -190,5 +190,41 @@ public class APFertilidade {
 
     void lerDados() {
         parceiros = armazenamento.getParceiros();
+    }
+
+    /**
+     * Procura na lista de parceiros se o parceiro existe.
+     * Testa se o parametro passado é um inteiro, procurando assim pelo id, senão procura por nome.
+     *
+     * @param parametro ID do Parceiro ou nome.
+     * @return Parceiro ou null.
+     */
+    Parceiro getParceiro(String parametro) {
+        try {
+            for (Parceiro parceiro : parceiros) {
+                if (isInteger(parametro) && parceiro.getIdParceiro() == Integer.parseInt(parametro)) return parceiro;
+                if (parceiro.getNome().equals(parametro)) return parceiro;
+            }
+
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        return null;
+    }
+
+    /**
+     * Verifica se uma string é um inteiro.
+     *
+     * @param s String a ser verificada.
+     * @return true ou false.
+     */
+    private static boolean isInteger(String s) {
+        try {
+            Integer.parseInt(s);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        // só returna true se a string é um inteiro
+        return true;
     }
 }

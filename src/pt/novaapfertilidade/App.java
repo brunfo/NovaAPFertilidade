@@ -24,13 +24,13 @@ public class App {
     }
 
     private static void simular(){
-        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 1, "Farmácia Silva"));
-        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 2, "Farmácia Calado"));
-        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 2, "Farmácia Mateus"));
-        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 4, "Farmácia da Republica"));
-        Utilizador.adicionaParceiro(new Parceiro("Hotéis", 5, "Hotel Inn"));
+//        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 1, "Farmácia Silva"));
+//        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 2, "Farmácia Calado"));
+//        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 2, "Farmácia Mateus"));
+//        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 4, "Farmácia da Republica"));
+//        Utilizador.adicionaParceiro(new Parceiro("Hotéis", 5, "Hotel Inn"));
 
-        Utilizador.gravarDados();
+//        Utilizador.gravarDados();
         Utilizador.lerDados();
 
         Utilizador.verMenu();
@@ -45,6 +45,9 @@ public class App {
         //aplica filtro sobre lista filtrada
         Utilizador.aplicaFiltro("ID", "3");
         Utilizador.listaParceiros();
+
+        System.out.println(Utilizador.getParceiro(5));
+        System.out.println(Utilizador.getParceiro("Farmácia Silva"));
 
 
     }

@@ -34,6 +34,14 @@ public class Utilizador {
         aPFertilidade.removeParceiro(parceiro);
     }
 
+    public static Parceiro getParceiro(String parametro) {
+        return aPFertilidade.getParceiro(parametro);
+    }
+
+    public static Parceiro getParceiro(int parametro) {
+        return getParceiro(Integer.toString(parametro));
+    }
+
     public static void adicionaBeneficio(Parceiro parceiro, Beneficio beneficio) {
         aPFertilidade.adicionaBeneficio(parceiro, beneficio);
     }
