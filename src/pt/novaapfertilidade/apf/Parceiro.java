@@ -33,22 +33,22 @@ public class Parceiro {
                 null,
                 null,
                 null,
-                new ArrayList<Beneficio>());
+                new ArrayList<>());
     }
 
-    public Parceiro(String tipoParceiro,
-                    int idParceiro,
-                    String nome,
-                    String morada,
-                    String codigoPostal,
-                    String localidade,
-                    String concelho,
-                    String distrito,
-                    String telefone,
-                    String fax,
-                    String email,
-                    String webSite,
-                    List<Beneficio> beneficios) {
+    Parceiro(String tipoParceiro,
+             int idParceiro,
+             String nome,
+             String morada,
+             String codigoPostal,
+             String localidade,
+             String concelho,
+             String distrito,
+             String telefone,
+             String fax,
+             String email,
+             String webSite,
+             List<Beneficio> beneficios) {
 
         this.tipoParceiro = tipoParceiro;
         this.idParceiro = idParceiro;
@@ -88,7 +88,7 @@ public class Parceiro {
         this.idParceiro = idParceiro;
     }
 
-    public String getNome() {
+    String getNome() {
         return nome;
     }
 
@@ -96,7 +96,7 @@ public class Parceiro {
         this.nome = nome;
     }
 
-    public String getMorada() {
+    String getMorada() {
         return morada;
     }
 
@@ -104,7 +104,7 @@ public class Parceiro {
         this.morada = morada;
     }
 
-    public String getCodigoPostal() {
+    String getCodigoPostal() {
         return codigoPostal;
     }
 
@@ -112,7 +112,7 @@ public class Parceiro {
         this.codigoPostal = codigoPostal;
     }
 
-    public String getLocalidade() {
+    String getLocalidade() {
         return localidade;
     }
 
@@ -120,7 +120,7 @@ public class Parceiro {
         this.localidade = localidade;
     }
 
-    public String getConcelho() {
+    String getConcelho() {
         return concelho;
     }
 
@@ -128,7 +128,7 @@ public class Parceiro {
         this.concelho = concelho;
     }
 
-    public String getDistrito() {
+    String getDistrito() {
         return distrito;
     }
 
@@ -136,7 +136,7 @@ public class Parceiro {
         this.distrito = distrito;
     }
 
-    public String getTelefone() {
+    String getTelefone() {
         return telefone;
     }
 
@@ -144,7 +144,7 @@ public class Parceiro {
         this.telefone = telefone;
     }
 
-    public String getFax() {
+    String getFax() {
         return fax;
     }
 
@@ -152,7 +152,7 @@ public class Parceiro {
         this.fax = fax;
     }
 
-    public String getEmail() {
+    String getEmail() {
         return email;
     }
 
@@ -160,7 +160,7 @@ public class Parceiro {
         this.email = email;
     }
 
-    public String getWebSite() {
+    String getWebSite() {
         return webSite;
     }
 
@@ -172,7 +172,7 @@ public class Parceiro {
         return beneficios;
     }
 
-    public void setBeneficios(List<Beneficio> beneficios) {
+    void setBeneficios(List<Beneficio> beneficios) {
         this.beneficios = beneficios;
     }
 }
