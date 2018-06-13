@@ -33,7 +33,7 @@ public class Parceiro {
                 null,
                 null,
                 null,
-                null);
+                new ArrayList<Beneficio>());
     }
 
     public Parceiro(String tipoParceiro,
@@ -62,11 +62,13 @@ public class Parceiro {
         this.fax = fax;
         this.email = email;
         this.webSite = webSite;
-        this.beneficios = beneficios;
+        if (beneficios != null)
+            this.beneficios = beneficios;
     }
 
     public String toString() {
-        return tipoParceiro + " => " + idParceiro + " : " + nome;
+        return tipoParceiro + " => " + idParceiro + " : " + nome +
+                "\tBeneficios: " + getBeneficios();
     }
 
 

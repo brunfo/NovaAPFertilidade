@@ -42,7 +42,7 @@ public class Utilizador {
         return getParceiro(Integer.toString(parametro));
     }
 
-    public static void adicionaBeneficio(Parceiro parceiro, Beneficio beneficio) {
+    public static void adicionaBeneficio(Parceiro parceiro, String beneficio) {
         aPFertilidade.adicionaBeneficio(parceiro, beneficio);
     }
 
@@ -62,11 +62,11 @@ public class Utilizador {
         aPFertilidade.removeFiltros();
     }
 
-    public static void gravarDados() {
+    public static void gravaDados() {
         aPFertilidade.gravarDados();
     }
 
-    public static void lerDados() {
+    public static void leDados() {
         aPFertilidade.lerDados();
     }
 }

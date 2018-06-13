@@ -17,6 +17,14 @@
   {
     "tipoParceiro": "Hotéis",
     "idParceiro": 5,
-    "nome": "Hotel Inn"
+    "nome": "Hotel Inn",
+    "beneficios": [
+      {
+        "beneficio": "5% de Desconto em tudo"
+      },
+      {
+        "beneficio": "10% de Desconto em Comparticipados"
+      }
+    ]
   }
 ]

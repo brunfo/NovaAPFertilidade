@@ -165,13 +165,29 @@ public class APFertilidade {
 
 
     /**
-     * Adiciona um benefício a um parceiro
+     * Adiciona um benefício a um parceiro. Testa se o Parceiro já tem uma lista de Beneficios,
+     * senão cria-a.
+     * Verifica se na lista existente já existe beneficio a adicionar, só verifica strings exatas,
+     * ignorando maiúsculas e minúsculas.
      *
      * @param parceiro  O Parceiro
      * @param beneficio O Benefício
      */
-    void adicionaBeneficio(Parceiro parceiro, Beneficio beneficio) {
-        parceiro.getBeneficios().add(beneficio);
+    void adicionaBeneficio(Parceiro parceiro, String beneficio) {
+        List<Beneficio> beneficios = parceiro.getBeneficios();
+        Beneficio novoBeneficio = new Beneficio(beneficio);
+
+        if (beneficios == null)
+            parceiro.setBeneficios(new ArrayList<>());
+
+        boolean existe = false;
+        //não pode ser usado foreach por concorrencia, ou seja,
+        // ao adicionar elemento a array altera, e provoca erro de concorrencia
+        for (int i = 0; i < beneficios.size(); i++)
+            if (beneficios.get(i).toString().equalsIgnoreCase(novoBeneficio.toString()))
+                existe = true;
+        if (!existe)
+            beneficios.add(novoBeneficio);
     }
 
     /**

@@ -1,7 +1,6 @@
 package pt.novaapfertilidade;
 
 import pt.novaapfertilidade.apf.APFertilidade;
-import pt.novaapfertilidade.apf.Parceiro;
 import pt.novaapfertilidade.apf.Utilizador;
 import pt.novaapfertilidade.dao.ApfDAO;
 import pt.novaapfertilidade.dao.ImplementacaoAPFDAO;
@@ -30,8 +29,8 @@ public class App {
 //        Utilizador.adicionaParceiro(new Parceiro("Farmácia", 4, "Farmácia da Republica"));
 //        Utilizador.adicionaParceiro(new Parceiro("Hotéis", 5, "Hotel Inn"));
 
-//        Utilizador.gravarDados();
-        Utilizador.lerDados();
+//        Utilizador.gravaDados();
+        Utilizador.leDados();
 
         Utilizador.verMenu();
 
@@ -48,6 +47,13 @@ public class App {
 
         System.out.println(Utilizador.getParceiro(5));
         System.out.println(Utilizador.getParceiro("Farmácia Silva"));
+
+        Utilizador.adicionaBeneficio(Utilizador.getParceiro(5), "5% de Desconto em tudo");
+        Utilizador.adicionaBeneficio(Utilizador.getParceiro(5), "10% de Desconto em Comparticipados");
+
+
+        System.out.println(Utilizador.getParceiro(5));
+        Utilizador.gravaDados();
 
 
     }
