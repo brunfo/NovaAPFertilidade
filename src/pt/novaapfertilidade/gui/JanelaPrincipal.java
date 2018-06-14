@@ -2,6 +2,7 @@ package pt.novaapfertilidade.gui;
 
 import pt.novaapfertilidade.apf.APFertilidade;
 import pt.novaapfertilidade.apf.Parceiro;
+import pt.novaapfertilidade.apf.Utilizador;
 
 import java.util.InputMismatchException;
 
@@ -42,8 +43,9 @@ public class JanelaPrincipal {
             System.out.println("\n**************************ALERTA**************************\n" +
                                  "A opção selecionada não é válida! Insira uma opção válida!\n" +
                                  "**********************************************************\n");
-        if (ex.toString() instanceof String)
-            System.out.println(ex);
+        if (ex.toString() != null) {
+            System.err.println(ex.getMessage());
+        }
 
     }
 
@@ -57,6 +59,11 @@ public class JanelaPrincipal {
             System.out.println(parceiro);
         }
         System.out.println("\n******************\n\n\n");
+    }
+
+    public String mensagem(String msg) {
+        System.out.println(msg);
+        return Utilizador.reponde();
     }
 
 

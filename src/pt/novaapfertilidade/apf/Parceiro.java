@@ -7,6 +7,7 @@ public class Parceiro {
 
     private String tipoParceiro;
     private int idParceiro;
+    private static int ultimoId;
     private String nome;
     private String morada;
     private String codigoPostal;
@@ -19,8 +20,11 @@ public class Parceiro {
     private String webSite;
     private List<Beneficio> beneficios = new ArrayList<>();
 
+    Parceiro() {
+        this(null, ultimoId++, null);
+    }
 
-    public Parceiro(String tipoParceiro, int idParceiro, String nome) {
+    private Parceiro(String tipoParceiro, int idParceiro, String nome) {
         this(tipoParceiro,
                 idParceiro,
                 nome,
@@ -66,6 +70,15 @@ public class Parceiro {
             this.beneficios = beneficios;
     }
 
+    static int getUltimoId() {
+        return ultimoId;
+    }
+
+    static void setUltimoId(int i) {
+        Parceiro.ultimoId = i;
+    }
+
+
     public String toString() {
         return tipoParceiro + " => " + idParceiro + " : " + nome +
                 "\tBeneficios: " + getBeneficios();
@@ -80,11 +93,11 @@ public class Parceiro {
         return tipoParceiro;
     }
 
-    public void setTipoParceiro(String tipoParceiro) {
+    void setTipoParceiro(String tipoParceiro) {
         this.tipoParceiro = tipoParceiro;
     }
 
-    public void setIdParceiro(int idParceiro) {
+    private void setIdParceiro(int idParceiro) {
         this.idParceiro = idParceiro;
     }
 
@@ -92,7 +105,7 @@ public class Parceiro {
         return nome;
     }
 
-    public void setNome(String nome) {
+    void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -100,7 +113,7 @@ public class Parceiro {
         return morada;
     }
 
-    public void setMorada(String morada) {
+    void setMorada(String morada) {
         this.morada = morada;
     }
 
@@ -108,7 +121,7 @@ public class Parceiro {
         return codigoPostal;
     }
 
-    public void setCodigoPostal(String codigoPostal) {
+    void setCodigoPostal(String codigoPostal) {
         this.codigoPostal = codigoPostal;
     }
 
@@ -116,7 +129,7 @@ public class Parceiro {
         return localidade;
     }
 
-    public void setLocalidade(String localidade) {
+    void setLocalidade(String localidade) {
         this.localidade = localidade;
     }
 
@@ -124,7 +137,7 @@ public class Parceiro {
         return concelho;
     }
 
-    public void setConcelho(String concelho) {
+    void setConcelho(String concelho) {
         this.concelho = concelho;
     }
 
@@ -132,7 +145,7 @@ public class Parceiro {
         return distrito;
     }
 
-    public void setDistrito(String distrito) {
+    void setDistrito(String distrito) {
         this.distrito = distrito;
     }
 
@@ -140,7 +153,7 @@ public class Parceiro {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
+    void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -148,7 +161,7 @@ public class Parceiro {
         return fax;
     }
 
-    public void setFax(String fax) {
+    void setFax(String fax) {
         this.fax = fax;
     }
 
@@ -156,7 +169,7 @@ public class Parceiro {
         return email;
     }
 
-    public void setEmail(String email) {
+    void setEmail(String email) {
         this.email = email;
     }
 
@@ -164,7 +177,7 @@ public class Parceiro {
         return webSite;
     }
 
-    public void setWebSite(String webSite) {
+    void setWebSite(String webSite) {
         this.webSite = webSite;
     }
 

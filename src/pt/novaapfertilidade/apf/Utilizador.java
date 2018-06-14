@@ -30,11 +30,16 @@ public class Utilizador {
         aPFertilidade.criaParceiro(parceiro);
     }
 
+    public static void adicionarParceiro() {
+        aPFertilidade.criaParceiro();
+    }
+
+
     public static void removeParceiro(Parceiro parceiro) {
         aPFertilidade.removeParceiro(parceiro);
     }
 
-    public static Parceiro getParceiro(String parametro) {
+    private static Parceiro getParceiro(String parametro) {
         return aPFertilidade.getParceiro(parametro);
     }
 
@@ -68,5 +73,12 @@ public class Utilizador {
 
     public static void leDados() {
         aPFertilidade.lerDados();
+    }
+
+
+    public static String reponde() {
+
+        Scanner sc = new Scanner(System.in);
+        return sc.nextLine();
     }
 }

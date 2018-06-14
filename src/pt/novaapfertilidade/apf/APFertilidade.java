@@ -1,6 +1,7 @@
 package pt.novaapfertilidade.apf;
 
 import pt.novaapfertilidade.dao.ApfDAO;
+import pt.novaapfertilidade.gui.JanelaPrincipal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,58 @@ public class APFertilidade {
             parceiros.add(novoParceiro);
         else if (substituiParceiro(index))
             editaParceiro(index, novoParceiro);
+    }
+
+    /**
+     * METODO APENAS PARA EFEITOS DE TESTES
+     * Cria um novo Parceiro atravez da consola
+     */
+    void criaParceiro() {
+        //TODO Reescrever metodo, não pertence a esta classe, mas sim a uma gui esclusiva para consola
+        Parceiro novoParceiro = new Parceiro();
+        JanelaPrincipal janela = JanelaPrincipal.getInstance();
+
+        String strTemp;
+        do
+            strTemp = janela.mensagem("Introduza tipo de Parceiro: ");
+        while (strTemp.isEmpty());
+        novoParceiro.setTipoParceiro(strTemp);
+
+        do
+            strTemp = janela.mensagem("Introduza nome:  ");
+        while (strTemp.isEmpty());
+        novoParceiro.setNome(strTemp);
+
+        novoParceiro.setMorada(janela.mensagem("Introduza a Morada:"));
+        novoParceiro.setCodigoPostal(janela.mensagem("Introduza o Código Postal: "));
+        novoParceiro.setLocalidade(janela.mensagem("Introduza a Localidade: "));
+        novoParceiro.setConcelho(janela.mensagem("Introduza o Concelho: "));
+        novoParceiro.setDistrito(janela.mensagem("Introduza o Distrito: "));
+        novoParceiro.setTelefone(janela.mensagem("Introduza o Telefone: "));
+        novoParceiro.setFax(janela.mensagem("Introduza o Fax: "));
+        novoParceiro.setEmail(janela.mensagem("Introduza o E-mail: "));
+        novoParceiro.setWebSite(janela.mensagem("Introduza a página web: "));
+        boolean novoBeneficio;
+        do {
+            adicionaBeneficio(novoParceiro, janela.mensagem("Introduza um benefício: "));
+            try {
+                novoBeneficio = janela.mensagem("Introduzir novo benefício (s ou Enter para adicionar)?").toLowerCase().charAt(0) == 's';
+            } catch (StringIndexOutOfBoundsException ex) {
+                novoBeneficio = true;
+            }
+        } while (novoBeneficio);
+
+        criaParceiro(novoParceiro);
+        gravarDados();
+
+    }
+
+    private void verificaUltimoId() {
+        for (Parceiro iterador : parceiros) {
+            int iteradorId = iterador.getIdParceiro();
+            if (iteradorId >= Parceiro.getUltimoId())
+                Parceiro.setUltimoId(iteradorId + 1);
+        }
     }
 
     /**
@@ -174,20 +227,26 @@ public class APFertilidade {
      * @param beneficio O Benefício
      */
     void adicionaBeneficio(Parceiro parceiro, String beneficio) {
-        List<Beneficio> beneficios = parceiro.getBeneficios();
-        Beneficio novoBeneficio = new Beneficio(beneficio);
+        try {
+            List<Beneficio> beneficios = parceiro.getBeneficios();
+            Beneficio novoBeneficio = new Beneficio(beneficio);
 
-        if (beneficios == null)
-            parceiro.setBeneficios(new ArrayList<>());
+            boolean existe = false;
+            if (beneficios == null)
+                parceiro.setBeneficios(new ArrayList<>());
+            else {
 
-        boolean existe = false;
-        //não pode ser usado foreach por concorrencia, ou seja,
-        // ao adicionar elemento a array altera, e provoca erro de concorrencia
-        for (int i = 0; i < beneficios.size(); i++)
-            if (beneficios.get(i).toString().equalsIgnoreCase(novoBeneficio.toString()))
-                existe = true;
-        if (!existe)
-            beneficios.add(novoBeneficio);
+                for (Beneficio iterado : beneficios) {
+                    existe = (iterado.toString().equalsIgnoreCase(novoBeneficio.toString()));
+                }
+            }
+            if (!existe)
+                if (beneficios != null) {
+                    beneficios.add(novoBeneficio);
+                }
+        } catch (NullPointerException ex) {
+            System.err.println("Parceiro não existe");
+        }
     }
 
     /**
@@ -201,11 +260,13 @@ public class APFertilidade {
     }
 
     void gravarDados() {
+        removeFiltros();
         armazenamento.setParceiros(getParceiros());
     }
 
     void lerDados() {
         parceiros = armazenamento.getParceiros();
+        verificaUltimoId();
     }
 
     /**

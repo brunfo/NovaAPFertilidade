@@ -34,26 +34,30 @@ public class App {
 
         Utilizador.verMenu();
 
-        Utilizador.listaParceiros();
-        Utilizador.aplicaFiltro("ID", "2");
-        Utilizador.listaParceiros();
-        Utilizador.removeFiltro();
-        Utilizador.listaParceiros();
-        Utilizador.aplicaFiltro("tipo", "farmácia");
-        Utilizador.listaParceiros();
-        //aplica filtro sobre lista filtrada
-        Utilizador.aplicaFiltro("ID", "3");
-        Utilizador.listaParceiros();
+//        Utilizador.listaParceiros();
+//        Utilizador.aplicaFiltro("ID", "2");
+//        Utilizador.listaParceiros();
+//        Utilizador.removeFiltro();
+//        Utilizador.listaParceiros();
+//        Utilizador.aplicaFiltro("tipo", "farmácia");
+//        Utilizador.listaParceiros();
+//        //aplica filtro sobre lista filtrada
+//        Utilizador.aplicaFiltro("ID", "3");
+//        Utilizador.listaParceiros();
+//
+//        System.out.println(Utilizador.getParceiro(5));
+//        System.out.println(Utilizador.getParceiro("Farmácia Silva"));
+//
+//        Utilizador.adicionaBeneficio(Utilizador.getParceiro(5), "5% de Desconto em tudo");
+//        Utilizador.adicionaBeneficio(Utilizador.getParceiro(5), "10% de Desconto em Comparticipados");
+//
+//
+//        System.out.println(Utilizador.getParceiro(5));
+//        Utilizador.gravaDados();
 
-        System.out.println(Utilizador.getParceiro(5));
-        System.out.println(Utilizador.getParceiro("Farmácia Silva"));
-
-        Utilizador.adicionaBeneficio(Utilizador.getParceiro(5), "5% de Desconto em tudo");
-        Utilizador.adicionaBeneficio(Utilizador.getParceiro(5), "10% de Desconto em Comparticipados");
-
-
-        System.out.println(Utilizador.getParceiro(5));
-        Utilizador.gravaDados();
+        Utilizador.listaParceiros();
+        Utilizador.adicionarParceiro();
+        Utilizador.listaParceiros();
 
 
     }

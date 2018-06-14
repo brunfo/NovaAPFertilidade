@@ -35,13 +35,12 @@ public class ImplementacaoAPFDAO implements ApfDAO {
             if (elementoJson.isJsonArray())
                 for (JsonElement elemento : elementoJson.getAsJsonArray()) {
                     parceiros.add(gson.fromJson(elemento, Parceiro.class));
+
                 }
             else if (elementoJson.isJsonObject())
                 parceiros.add(gson.fromJson(elementoJson.getAsJsonObject(), Parceiro.class));
 
             leitor.close();
-        } catch (FileNotFoundException e) {
-            System.err.print(e.getMessage());
         } catch (IOException e2) {
             System.err.print(e2.getMessage());
         }
