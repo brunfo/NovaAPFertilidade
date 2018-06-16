@@ -93,7 +93,7 @@ public class Parceiro {
         return tipoParceiro;
     }
 
-    void setTipoParceiro(String tipoParceiro) {
+    public void setTipoParceiro(String tipoParceiro) {
         this.tipoParceiro = tipoParceiro;
     }
 
@@ -105,7 +105,7 @@ public class Parceiro {
         return nome;
     }
 
-    void setNome(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -113,7 +113,7 @@ public class Parceiro {
         return morada;
     }
 
-    void setMorada(String morada) {
+    public void setMorada(String morada) {
         this.morada = morada;
     }
 
@@ -121,7 +121,7 @@ public class Parceiro {
         return codigoPostal;
     }
 
-    void setCodigoPostal(String codigoPostal) {
+    public void setCodigoPostal(String codigoPostal) {
         this.codigoPostal = codigoPostal;
     }
 
@@ -129,7 +129,7 @@ public class Parceiro {
         return localidade;
     }
 
-    void setLocalidade(String localidade) {
+    public void setLocalidade(String localidade) {
         this.localidade = localidade;
     }
 
@@ -137,7 +137,7 @@ public class Parceiro {
         return concelho;
     }
 
-    void setConcelho(String concelho) {
+    public void setConcelho(String concelho) {
         this.concelho = concelho;
     }
 
@@ -145,7 +145,7 @@ public class Parceiro {
         return distrito;
     }
 
-    void setDistrito(String distrito) {
+    public void setDistrito(String distrito) {
         this.distrito = distrito;
     }
 
@@ -153,7 +153,7 @@ public class Parceiro {
         return telefone;
     }
 
-    void setTelefone(String telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -161,7 +161,7 @@ public class Parceiro {
         return fax;
     }
 
-    void setFax(String fax) {
+    public void setFax(String fax) {
         this.fax = fax;
     }
 
@@ -169,7 +169,7 @@ public class Parceiro {
         return email;
     }
 
-    void setEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -177,7 +177,7 @@ public class Parceiro {
         return webSite;
     }
 
-    void setWebSite(String webSite) {
+    public void setWebSite(String webSite) {
         this.webSite = webSite;
     }
 

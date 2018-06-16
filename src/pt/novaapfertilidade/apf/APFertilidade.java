@@ -57,43 +57,14 @@ public class APFertilidade {
     }
 
     /**
-     * METODO APENAS PARA EFEITOS DE TESTES
-     * Cria um novo Parceiro atravez da consola
+     * Metodo para criar um novo parceiro, a partir de objecto sem valores
      */
     void criaParceiro() {
-        //TODO Reescrever metodo, não pertence a esta classe, mas sim a uma gui esclusiva para consola
         Parceiro novoParceiro = new Parceiro();
         GUI janela = GUI.getInstance();
 
-        String strTemp;
-        do
-            strTemp = janela.mensagem("Introduza tipo de Parceiro: ");
-        while (strTemp.isEmpty());
-        novoParceiro.setTipoParceiro(strTemp);
-
-        do
-            strTemp = janela.mensagem("Introduza nome:  ");
-        while (strTemp.isEmpty());
-        novoParceiro.setNome(strTemp);
-
-        novoParceiro.setMorada(janela.mensagem("Introduza a Morada:"));
-        novoParceiro.setCodigoPostal(janela.mensagem("Introduza o Código Postal: "));
-        novoParceiro.setLocalidade(janela.mensagem("Introduza a Localidade: "));
-        novoParceiro.setConcelho(janela.mensagem("Introduza o Concelho: "));
-        novoParceiro.setDistrito(janela.mensagem("Introduza o Distrito: "));
-        novoParceiro.setTelefone(janela.mensagem("Introduza o Telefone: "));
-        novoParceiro.setFax(janela.mensagem("Introduza o Fax: "));
-        novoParceiro.setEmail(janela.mensagem("Introduza o E-mail: "));
-        novoParceiro.setWebSite(janela.mensagem("Introduza a página web: "));
-        boolean novoBeneficio;
-        do {
-            adicionaBeneficio(novoParceiro, janela.mensagem("Introduza um benefício: "));
-            try {
-                novoBeneficio = janela.mensagem("Introduzir novo benefício (s ou Enter para adicionar)?").toLowerCase().charAt(0) == 's';
-            } catch (StringIndexOutOfBoundsException ex) {
-                novoBeneficio = true;
-            }
-        } while (novoBeneficio);
+        if (janela instanceof Consola)
+            ((Consola) janela).criaParceiro(novoParceiro);
 
         criaParceiro(novoParceiro);
         gravarDados();

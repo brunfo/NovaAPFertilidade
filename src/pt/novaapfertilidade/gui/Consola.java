@@ -6,6 +6,8 @@ import pt.novaapfertilidade.apf.Utilizador;
 
 import java.util.InputMismatchException;
 
+import static pt.novaapfertilidade.apf.Utilizador.adicionaBeneficio;
+
 public class Consola implements GUI {
 
     //Singleton
@@ -69,6 +71,40 @@ public class Consola implements GUI {
     public String mensagem(String msg) {
         System.out.println(msg);
         return Utilizador.reponde();
+    }
+
+
+    public void criaParceiro(Parceiro novoParceiro) {
+        String strTemp;
+        do
+            strTemp = mensagem("Introduza tipo de Parceiro: ");
+        while (strTemp.isEmpty());
+        novoParceiro.setTipoParceiro(strTemp);
+
+        do
+            strTemp = mensagem("Introduza nome:  ");
+        while (strTemp.isEmpty());
+        novoParceiro.setNome(strTemp);
+
+        novoParceiro.setMorada(mensagem("Introduza a Morada:"));
+        novoParceiro.setCodigoPostal(mensagem("Introduza o Código Postal: "));
+        novoParceiro.setLocalidade(mensagem("Introduza a Localidade: "));
+        novoParceiro.setConcelho(mensagem("Introduza o Concelho: "));
+        novoParceiro.setDistrito(mensagem("Introduza o Distrito: "));
+        novoParceiro.setTelefone(mensagem("Introduza o Telefone: "));
+        novoParceiro.setFax(mensagem("Introduza o Fax: "));
+        novoParceiro.setEmail(mensagem("Introduza o E-mail: "));
+        novoParceiro.setWebSite(mensagem("Introduza a página web: "));
+        boolean novoBeneficio;
+        do {
+            adicionaBeneficio(novoParceiro, mensagem("Introduza um benefício: "));
+            try {
+                novoBeneficio = mensagem("Introduzir novo benefício (s ou Enter para adicionar)?").toLowerCase().charAt(0) == 's';
+            } catch (StringIndexOutOfBoundsException ex) {
+                novoBeneficio = true;
+            }
+        } while (novoBeneficio);
+
     }
 
 

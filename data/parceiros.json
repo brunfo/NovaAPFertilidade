@@ -42,5 +42,24 @@
         "beneficio": "5% desconto"
       }
     ]
+  },
+  {
+    "tipoParceiro": "Farmácia",
+    "idParceiro": 2,
+    "nome": "Farmácia Melo",
+    "morada": "Rua 25 de Abril",
+    "codigoPostal": "2670-488",
+    "localidade": "Mealhada",
+    "concelho": "Loures",
+    "distrito": "Lisboa",
+    "telefone": "231345654",
+    "fax": "231332345",
+    "email": "farmacia.melo@gmail.com",
+    "webSite": "wwww",
+    "beneficios": [
+      {
+        "beneficio": "5% em medicamentos não comparticipados"
+      }
+    ]
   }
 ]
