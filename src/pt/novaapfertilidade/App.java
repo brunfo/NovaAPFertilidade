@@ -4,23 +4,24 @@ import pt.novaapfertilidade.apf.APFertilidade;
 import pt.novaapfertilidade.apf.Utilizador;
 import pt.novaapfertilidade.dao.ApfDAO;
 import pt.novaapfertilidade.dao.ImplementacaoAPFDAO;
-import pt.novaapfertilidade.gui.Consola;
 import pt.novaapfertilidade.gui.GUI;
+
+import java.util.Objects;
 
 public class App {
 
-    private static APFertilidade aPFertilidade=APFertilidade.getInstance();
-    static private GUI janela = GUI.getInstance();
-
     public static void main(String[] args){
+        //Configurações iniciais
         //inicializa a persistence storage
         ApfDAO armazenamento = new ImplementacaoAPFDAO("data/parceiros.json");
         //business object
+        APFertilidade aPFertilidade = APFertilidade.getInstance();
+        //configura o armazenamento
         aPFertilidade.setStorage (armazenamento);
-
-        janela.visualizar();
-
-        simular();
+        //configura a user interface
+        aPFertilidade.setUserInterface("consola");
+        //inicia a aplicação
+        Objects.requireNonNull(GUI.getInstance()).iniciar();
     }
 
     private static void simular(){
@@ -38,7 +39,7 @@ public class App {
 //        Utilizador.listaParceiros();
 //        Utilizador.aplicaFiltro("ID", "2");
 //        Utilizador.listaParceiros();
-//        Utilizador.removeFiltro();
+//        Utilizador.limparFiltros();
 //        Utilizador.listaParceiros();
 //        Utilizador.aplicaFiltro("tipo", "farmácia");
 //        Utilizador.listaParceiros();

@@ -1,6 +1,5 @@
 package pt.novaapfertilidade.apf;
 
-import pt.novaapfertilidade.gui.Consola;
 import pt.novaapfertilidade.gui.GUI;
 
 import java.util.InputMismatchException;
@@ -35,12 +34,11 @@ public class Utilizador {
         aPFertilidade.criaParceiro();
     }
 
-
     public static void removeParceiro(Parceiro parceiro) {
         aPFertilidade.removeParceiro(parceiro);
     }
 
-    private static Parceiro getParceiro(String parametro) {
+    public static Parceiro getParceiro(String parametro) {
         return aPFertilidade.getParceiro(parametro);
     }
 
@@ -64,8 +62,8 @@ public class Utilizador {
         aPFertilidade.aplicaFiltro(filtro, valor);
     }
 
-    public static void removeFiltro() {
-        aPFertilidade.removeFiltros();
+    public static void limparFiltros() {
+        aPFertilidade.limparFiltros();
     }
 
     public static void gravaDados() {
@@ -77,7 +75,7 @@ public class Utilizador {
     }
 
 
-    public static String reponde() {
+    public static String responde() {
 
         Scanner sc = new Scanner(System.in);
         return sc.nextLine();

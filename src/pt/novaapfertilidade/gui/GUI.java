@@ -11,7 +11,7 @@ public interface GUI {
         return null;
     }
 
-    void visualizar();
+    void iniciar();
 
     void verMenu();
 

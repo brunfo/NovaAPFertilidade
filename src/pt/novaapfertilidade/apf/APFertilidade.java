@@ -5,7 +5,6 @@ import pt.novaapfertilidade.gui.Consola;
 import pt.novaapfertilidade.gui.GUI;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class APFertilidade {
@@ -28,10 +27,14 @@ public class APFertilidade {
     private ApfDAO armazenamento;
 
     //Definições de user interface
-    private static String userInterface = "consola";
+    private static String userInterface;
 
     public static String getUserInterface() {
         return userInterface;
+    }
+
+    public void setUserInterface(String userInterface) {
+        APFertilidade.userInterface = userInterface;
     }
 
     /**
@@ -57,7 +60,7 @@ public class APFertilidade {
     }
 
     /**
-     * Metodo para criar um novo parceiro, a partir de objecto sem valores
+     * Metodo para criar um novo parceiro, a partir de objecto sem valores(
      */
     void criaParceiro() {
         Parceiro novoParceiro = new Parceiro();
@@ -151,6 +154,7 @@ public class APFertilidade {
      */
     void removeParceiro(Parceiro parceiro) {
         parceiros.remove(parceiro);
+        gravarDados();
     }
 
     /**
@@ -185,6 +189,11 @@ public class APFertilidade {
                     parceirosTemp.add(parceiro);
                 }
             }
+            if (filtro.equalsIgnoreCase("localidade")) {
+                if (parceiro.getLocalidade().equalsIgnoreCase(valor)) {
+                    parceirosTemp.add(parceiro);
+                }
+            }
         }
         parceirosFiltrados = parceirosTemp; //atribui lista filtrada à referência de filtragem
     }
@@ -192,7 +201,7 @@ public class APFertilidade {
     /**
      * Remove todos os filtros aplicados à lista de Parceiros
      */
-    void removeFiltros() {
+    void limparFiltros() {
         parceirosFiltrados.clear();
     }
 
@@ -240,11 +249,11 @@ public class APFertilidade {
     }
 
     void gravarDados() {
-        removeFiltros();
+        limparFiltros();
         armazenamento.setParceiros(getParceiros());
     }
 
-    void lerDados() {
+    public void lerDados() {
         parceiros = armazenamento.getParceiros();
         verificaUltimoId();
     }
@@ -284,4 +293,6 @@ public class APFertilidade {
         // só returna true se a string é um inteiro
         return true;
     }
+
+
 }

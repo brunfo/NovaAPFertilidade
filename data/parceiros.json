@@ -1,27 +1,5 @@
 [
   {
-    "tipoParceiro": "Farmácia",
-    "idParceiro": 0,
-    "nome": "Farmácia Silva",
-    "morada": "Rua qualquer",
-    "codigoPostal": "",
-    "localidade": "",
-    "concelho": "",
-    "distrito": "",
-    "telefone": "",
-    "fax": "",
-    "email": "",
-    "webSite": "",
-    "beneficios": [
-      {
-        "beneficio": "5% desconto"
-      },
-      {
-        "beneficio": "3% desconto"
-      }
-    ]
-  },
-  {
     "tipoParceiro": "Hoteis",
     "idParceiro": 1,
     "nome": "Hotel Pestana",
@@ -59,6 +37,44 @@
     "beneficios": [
       {
         "beneficio": "5% em medicamentos não comparticipados"
+      }
+    ]
+  },
+  {
+    "tipoParceiro": "Farmácia",
+    "idParceiro": 3,
+    "nome": "Farmácia da Avenida",
+    "morada": "Avenida",
+    "codigoPostal": "",
+    "localidade": "",
+    "concelho": "",
+    "distrito": "",
+    "telefone": "",
+    "fax": "",
+    "email": "",
+    "webSite": "",
+    "beneficios": [
+      {
+        "beneficio": "%2"
+      }
+    ]
+  },
+  {
+    "tipoParceiro": "Restaurante",
+    "idParceiro": 4,
+    "nome": "Restaurante do zé",
+    "morada": "praça da vila",
+    "codigoPostal": "232-23",
+    "localidade": "Lisboa",
+    "concelho": "Lisboa",
+    "distrito": "Lisboa",
+    "telefone": "34343",
+    "fax": "34",
+    "email": "3f",
+    "webSite": "dfg",
+    "beneficios": [
+      {
+        "beneficio": "5%"
       }
     ]
   }
