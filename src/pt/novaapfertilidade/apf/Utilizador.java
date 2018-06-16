@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Utilizador {
 
     private static APFertilidade aPFertilidade = APFertilidade.getInstance();
-    private static GUI janela = Consola.getInstance();
+    private static GUI janela = GUI.getInstance();
 
     public static void verMenu() {
         janela.verMenu();

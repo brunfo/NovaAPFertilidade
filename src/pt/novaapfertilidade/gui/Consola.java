@@ -15,7 +15,7 @@ public class Consola implements GUI {
         Consola.aPFertilidade = APFertilidade.getInstance();
     }
 
-    public static GUI getInstance() {
+    static GUI getInstance() {
         return Consola.instance;
     }
     //singleton

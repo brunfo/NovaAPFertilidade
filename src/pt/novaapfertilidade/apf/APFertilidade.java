@@ -5,6 +5,7 @@ import pt.novaapfertilidade.gui.Consola;
 import pt.novaapfertilidade.gui.GUI;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class APFertilidade {
@@ -25,6 +26,14 @@ public class APFertilidade {
 
     //Objecto de armazenamento
     private ApfDAO armazenamento;
+
+    //Definições de user interface
+    private static String userInterface = "consola";
+
+    public static String getUserInterface() {
+        return userInterface;
+    }
+
     /**
      * Define o objecto de armazenamento
      *
@@ -54,7 +63,7 @@ public class APFertilidade {
     void criaParceiro() {
         //TODO Reescrever metodo, não pertence a esta classe, mas sim a uma gui esclusiva para consola
         Parceiro novoParceiro = new Parceiro();
-        GUI janela = Consola.getInstance();
+        GUI janela = GUI.getInstance();
 
         String strTemp;
         do

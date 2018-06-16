@@ -10,7 +10,7 @@ import pt.novaapfertilidade.gui.GUI;
 public class App {
 
     private static APFertilidade aPFertilidade=APFertilidade.getInstance();
-    private static GUI janela = Consola.getInstance();
+    static private GUI janela = GUI.getInstance();
 
     public static void main(String[] args){
         //inicializa a persistence storage
