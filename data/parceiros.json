@@ -1,2 +1,46 @@
 [
+  {
+    "tipoParceiro": "Farmácia",
+    "idParceiro": 0,
+    "nome": "Farmácia Silva",
+    "morada": "Rua qualquer",
+    "codigoPostal": "",
+    "localidade": "",
+    "concelho": "",
+    "distrito": "",
+    "telefone": "",
+    "fax": "",
+    "email": "",
+    "webSite": "",
+    "beneficios": [
+      {
+        "beneficio": "5% desconto"
+      },
+      {
+        "beneficio": "3% desconto"
+      }
+    ]
+  },
+  {
+    "tipoParceiro": "Hoteis",
+    "idParceiro": 1,
+    "nome": "Hotel Pestana",
+    "morada": "",
+    "codigoPostal": "",
+    "localidade": "",
+    "concelho": "",
+    "distrito": "",
+    "telefone": "",
+    "fax": "",
+    "email": "",
+    "webSite": "",
+    "beneficios": [
+      {
+        "beneficio": ""
+      },
+      {
+        "beneficio": "5% desconto"
+      }
+    ]
+  }
 ]

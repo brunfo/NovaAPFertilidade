@@ -1,7 +1,8 @@
 package pt.novaapfertilidade.apf;
 
 import pt.novaapfertilidade.dao.ApfDAO;
-import pt.novaapfertilidade.gui.JanelaPrincipal;
+import pt.novaapfertilidade.gui.Consola;
+import pt.novaapfertilidade.gui.GUI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,21 +11,20 @@ public class APFertilidade {
 
     //Singleton
     private static APFertilidade instance = new APFertilidade();
-    //Lista de Parceiros
-    private static List<Parceiro> parceiros = new ArrayList<>();
-    private static List<Parceiro> parceirosFiltrados = new ArrayList<>();
-    //singleton
-
-    //Objecto de armazenamento
-    private ApfDAO armazenamento;
 
     private APFertilidade() {
     }
 
     public static APFertilidade getInstance() {
         return instance;
-    }
+    }    //Lista de Parceiros
+    //singleton
 
+    private static List<Parceiro> parceiros = new ArrayList<>();
+    private static List<Parceiro> parceirosFiltrados = new ArrayList<>();
+
+    //Objecto de armazenamento
+    private ApfDAO armazenamento;
     /**
      * Define o objecto de armazenamento
      *
@@ -54,7 +54,7 @@ public class APFertilidade {
     void criaParceiro() {
         //TODO Reescrever metodo, não pertence a esta classe, mas sim a uma gui esclusiva para consola
         Parceiro novoParceiro = new Parceiro();
-        JanelaPrincipal janela = JanelaPrincipal.getInstance();
+        GUI janela = Consola.getInstance();
 
         String strTemp;
         do

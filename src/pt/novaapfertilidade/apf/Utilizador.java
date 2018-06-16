@@ -1,6 +1,7 @@
 package pt.novaapfertilidade.apf;
 
-import pt.novaapfertilidade.gui.JanelaPrincipal;
+import pt.novaapfertilidade.gui.Consola;
+import pt.novaapfertilidade.gui.GUI;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -8,7 +9,7 @@ import java.util.Scanner;
 public class Utilizador {
 
     private static APFertilidade aPFertilidade = APFertilidade.getInstance();
-    private static JanelaPrincipal janela = JanelaPrincipal.getInstance();
+    private static GUI janela = Consola.getInstance();
 
     public static void verMenu() {
         janela.verMenu();

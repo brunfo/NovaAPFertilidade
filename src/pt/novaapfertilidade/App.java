@@ -4,12 +4,13 @@ import pt.novaapfertilidade.apf.APFertilidade;
 import pt.novaapfertilidade.apf.Utilizador;
 import pt.novaapfertilidade.dao.ApfDAO;
 import pt.novaapfertilidade.dao.ImplementacaoAPFDAO;
-import pt.novaapfertilidade.gui.JanelaPrincipal;
+import pt.novaapfertilidade.gui.Consola;
+import pt.novaapfertilidade.gui.GUI;
 
 public class App {
 
     private static APFertilidade aPFertilidade=APFertilidade.getInstance();
-    private static JanelaPrincipal janela=JanelaPrincipal.getInstance();
+    private static GUI janela = Consola.getInstance();
 
     public static void main(String[] args){
         //inicializa a persistence storage
