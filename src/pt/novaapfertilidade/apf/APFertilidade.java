@@ -3,6 +3,8 @@ package pt.novaapfertilidade.apf;
 import pt.novaapfertilidade.dao.ApfDAO;
 import pt.novaapfertilidade.gui.Consola;
 import pt.novaapfertilidade.gui.GUI;
+import pt.novaapfertilidade.model.Beneficio;
+import pt.novaapfertilidade.model.Parceiro;
 
 import java.util.ArrayList;
 import java.util.List;

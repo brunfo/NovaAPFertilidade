@@ -1,6 +1,8 @@
 package pt.novaapfertilidade.apf;
 
 import pt.novaapfertilidade.gui.GUI;
+import pt.novaapfertilidade.model.Beneficio;
+import pt.novaapfertilidade.model.Parceiro;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

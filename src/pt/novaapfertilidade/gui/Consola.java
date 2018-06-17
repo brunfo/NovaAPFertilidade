@@ -1,7 +1,8 @@
 package pt.novaapfertilidade.gui;
 
+import pt.novaapfertilidade.App;
 import pt.novaapfertilidade.apf.APFertilidade;
-import pt.novaapfertilidade.apf.Parceiro;
+import pt.novaapfertilidade.model.Parceiro;
 import pt.novaapfertilidade.apf.Utilizador;
 
 import java.util.InputMismatchException;
@@ -80,7 +81,7 @@ public class Consola implements GUI {
     public void verMenu() {
         System.out.println("NovaAPFertilidade - Listagem, filtragem e edição de parceiros " +
                 "que atribuem benefícios e descontos a associados.");
-        System.out.println("1.0.0-beta"); //TODO semantic versioning
+        System.out.println(App.getVersion());
         System.out.println("Bruno Rego@2018\n");
         System.out.println("Escolha uma opção:\n");
 

@@ -1,4 +1,4 @@
-package pt.novaapfertilidade.apf;
+package pt.novaapfertilidade.model;
 
 public class Beneficio {
 
@@ -13,7 +13,7 @@ public class Beneficio {
         return beneficio;
     }
 
-    public void setBeneficio(String beneficio) {
+    void setBeneficio(String beneficio) {
         this.beneficio = beneficio;
     }
 

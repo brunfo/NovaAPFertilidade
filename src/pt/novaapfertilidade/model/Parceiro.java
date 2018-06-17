@@ -1,4 +1,4 @@
-package pt.novaapfertilidade.apf;
+package pt.novaapfertilidade.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ public class Parceiro {
     private String webSite;
     private List<Beneficio> beneficios = new ArrayList<>();
 
-    Parceiro() {
+    public Parceiro() {
         this(null, ultimoId++, null);
     }
 
@@ -40,19 +40,19 @@ public class Parceiro {
                 new ArrayList<>());
     }
 
-    Parceiro(String tipoParceiro,
-             int idParceiro,
-             String nome,
-             String morada,
-             String codigoPostal,
-             String localidade,
-             String concelho,
-             String distrito,
-             String telefone,
-             String fax,
-             String email,
-             String webSite,
-             List<Beneficio> beneficios) {
+    public Parceiro(String tipoParceiro,
+                    int idParceiro,
+                    String nome,
+                    String morada,
+                    String codigoPostal,
+                    String localidade,
+                    String concelho,
+                    String distrito,
+                    String telefone,
+                    String fax,
+                    String email,
+                    String webSite,
+                    List<Beneficio> beneficios) {
 
         this.tipoParceiro = tipoParceiro;
         this.idParceiro = idParceiro;
@@ -70,11 +70,11 @@ public class Parceiro {
             this.beneficios = beneficios;
     }
 
-    static int getUltimoId() {
+    public static int getUltimoId() {
         return ultimoId;
     }
 
-    static void setUltimoId(int i) {
+    public static void setUltimoId(int i) {
         Parceiro.ultimoId = i;
     }
 
@@ -85,11 +85,11 @@ public class Parceiro {
     }
 
 
-    int getIdParceiro() {
+    public int getIdParceiro() {
         return idParceiro;
     }
 
-    String getTipoParceiro() {
+    public String getTipoParceiro() {
         return tipoParceiro;
     }
 
@@ -101,7 +101,7 @@ public class Parceiro {
         this.idParceiro = idParceiro;
     }
 
-    String getNome() {
+    public String getNome() {
         return nome;
     }
 
@@ -109,7 +109,7 @@ public class Parceiro {
         this.nome = nome;
     }
 
-    String getMorada() {
+    public String getMorada() {
         return morada;
     }
 
@@ -117,7 +117,7 @@ public class Parceiro {
         this.morada = morada;
     }
 
-    String getCodigoPostal() {
+    public String getCodigoPostal() {
         return codigoPostal;
     }
 
@@ -125,7 +125,7 @@ public class Parceiro {
         this.codigoPostal = codigoPostal;
     }
 
-    String getLocalidade() {
+    public String getLocalidade() {
         return localidade;
     }
 
@@ -133,7 +133,7 @@ public class Parceiro {
         this.localidade = localidade;
     }
 
-    String getConcelho() {
+    public String getConcelho() {
         return concelho;
     }
 
@@ -141,7 +141,7 @@ public class Parceiro {
         this.concelho = concelho;
     }
 
-    String getDistrito() {
+    public String getDistrito() {
         return distrito;
     }
 
@@ -149,7 +149,7 @@ public class Parceiro {
         this.distrito = distrito;
     }
 
-    String getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
@@ -157,7 +157,7 @@ public class Parceiro {
         this.telefone = telefone;
     }
 
-    String getFax() {
+    public String getFax() {
         return fax;
     }
 
@@ -165,7 +165,7 @@ public class Parceiro {
         this.fax = fax;
     }
 
-    String getEmail() {
+    public String getEmail() {
         return email;
     }
 
@@ -173,7 +173,7 @@ public class Parceiro {
         this.email = email;
     }
 
-    String getWebSite() {
+    public String getWebSite() {
         return webSite;
     }
 
@@ -181,11 +181,11 @@ public class Parceiro {
         this.webSite = webSite;
     }
 
-    List<Beneficio> getBeneficios() {
+    public List<Beneficio> getBeneficios() {
         return beneficios;
     }
 
-    void setBeneficios(List<Beneficio> beneficios) {
+    public void setBeneficios(List<Beneficio> beneficios) {
         this.beneficios = beneficios;
     }
 }

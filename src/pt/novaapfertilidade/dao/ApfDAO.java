@@ -1,6 +1,6 @@
 package pt.novaapfertilidade.dao;
 
-import pt.novaapfertilidade.apf.Parceiro;
+import pt.novaapfertilidade.model.Parceiro;
 
 import java.util.List;
 
@@ -10,14 +10,13 @@ public interface ApfDAO {
      *
      * @return Lista de Parceiros
      */
-    public List<Parceiro> getParceiros();
+    List<Parceiro> getParceiros();
 
     /**
      * Grava na base dados lista de Parceiros
      *
-     * @return
      */
-    public void setParceiros(List<Parceiro> parceiros);
+    void setParceiros(List<Parceiro> parceiros);
 
 
 }
