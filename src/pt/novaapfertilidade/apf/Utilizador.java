@@ -81,5 +81,6 @@ public class Utilizador {
 
         Scanner sc = new Scanner(System.in);
         return sc.nextLine();
+       
     }
 }

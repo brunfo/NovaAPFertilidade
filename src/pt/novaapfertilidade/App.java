@@ -27,4 +27,9 @@ public class App {
     public static String getVersion() {
         return App.strVersion;
     }
+    
+    static void simula(){
+        pt.novaapfertilidade.apf.Utilizador.listaParceiros();
+    }
 }
+

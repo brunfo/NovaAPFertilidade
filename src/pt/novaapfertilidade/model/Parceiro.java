@@ -80,7 +80,7 @@ public class Parceiro {
 
 
     public String toString() {
-        return tipoParceiro + " => " + idParceiro + " : " + nome +
+        return tipoParceiro + " => " + idParceiro + " : " + nome + "(" + getLocalidade() + ")" +
                 "\tBeneficios: " + getBeneficios();
     }
 
