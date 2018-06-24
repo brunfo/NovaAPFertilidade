@@ -66,10 +66,9 @@ public class APFertilidade {
      */
     void criaParceiro() {
         Parceiro novoParceiro = new Parceiro();
-        GUI janela = GUI.getInstance();
-
-        if (janela instanceof Consola)
-            ((Consola) janela).criaParceiro(novoParceiro);
+        
+        //envia para a gui a criação de novo parceiro
+        GUI.criaParceiro(novoParceiro);
 
         criaParceiro(novoParceiro);
         gravarDados();
